@@ -37,4 +37,360 @@
     .section-header h2{font-family:'Abril Fatface',Georgia,serif;font-size:2.2rem;color:#b8e4ff;margin-bottom:10px;}
     .grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;}
     .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;}
-    .pkg-card{background:#0d1f3c;border:1.5px solid #1e3560;border-radius:6px;padding:32px 26px;text-align:l
+    .pkg-card{background:#0d1f3c;border:1.5px solid #1e3560;border-radius:6px;padding:32px 26px;text-align:left;}
+    .pkg-card h3{font-family:'Abril Fatface',Georgia,serif;color:#b8e4ff;font-size:1.4rem;margin-bottom:4px;}
+    .pkg-price{color:#5bb8f5;font-size:1.9rem;font-family:'Abril Fatface',Georgia,serif;margin-bottom:14px;}
+    .pkg-card p{color:#60c0f0;font-size:0.9rem;line-height:1.7;margin-bottom:18px;}
+    .pkg-card ul{list-style:none;display:flex;flex-direction:column;gap:7px;}
+    .pkg-card li{display:flex;align-items:center;gap:8px;color:#90d4f7;font-size:0.85rem;}
+    .pkg-card li::before{content:"✓";color:#2196d3;}
+    .amenidad{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#0d1f3c;border:1px solid #162848;border-radius:4px;}
+    .amenidad span:first-child{font-size:1.5rem;}
+    .amenidad span:last-child{color:#90d4f7;font-size:0.88rem;}
+    .cal{background:#0a1628;border:1.5px solid #1e3560;border-radius:8px;overflow:hidden;}
+    .cal-header{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:#071020;border-bottom:1px solid #162848;}
+    .cal-header h3{font-family:'Abril Fatface',Georgia,serif;color:#b8e4ff;font-size:1.05rem;}
+    .cal-nav{background:none;border:none;color:#5bb8f5;font-size:1.5rem;cursor:pointer;line-height:1;padding:0 8px;}
+    .cal-days-header{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;padding:10px 12px 4px;}
+    .cal-day-name{text-align:center;font-size:0.65rem;color:#1870a8;padding-bottom:4px;}
+    .cal-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;padding:4px 12px 12px;}
+    .cal-day{height:38px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;border-radius:6px;cursor:pointer;user-select:none;transition:all 0.15s;}
+    .cal-day.available{background:#132440;color:#d4bc78;}
+    .cal-day.available:hover{background:#1a3060;color:#fff;}
+    .cal-day.occupied{background:#2a0a0a;color:#5a1a1a;cursor:not-allowed;}
+    .cal-day.occupied.admin{background:#7f1d1d;color:#fca5a5;cursor:pointer;}
+    .cal-day.selected{background:#2196d3;color:#fff;font-weight:bold;}
+    .cal-day.past{color:#162848;cursor:default;}
+    .cal-legend{display:flex;gap:16px;padding:10px 16px 12px;border-top:1px solid #162848;flex-wrap:wrap;}
+    .legend-item{display:flex;align-items:center;gap:6px;font-size:0.7rem;color:#40a8e0;}
+    .legend-dot{width:11px;height:11px;border-radius:3px;}
+    .form-section{max-width:700px;margin:0 auto;padding:52px 20px;}
+    .inp{width:100%;padding:11px 14px;border:1.5px solid #1e3560;background:#0d1f3c;font-family:'Lora',Georgia,serif;font-size:0.95rem;color:#f0ede6;outline:none;transition:border-color 0.2s;border-radius:2px;}
+    .inp:focus{border-color:#5bb8f5;}
+    .inp::placeholder{color:#2088c0;}
+    label{display:block;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:#40a8e0;margin-bottom:7px;}
+    .form-group{margin-bottom:16px;}
+    .grid-2-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .pkg-select{border:1.5px solid #1e3560;padding:20px;cursor:pointer;transition:all 0.22s;background:#0d1f3c;border-radius:4px;}
+    .pkg-select:hover{border-color:#5bb8f5;}
+    .pkg-select.selected{border-color:#5bb8f5;background:#132440;box-shadow:0 0 0 1px #2196d3;}
+    .resumen{background:#0d1f3c;border:1.5px solid #1e4080;border-radius:6px;padding:18px 22px;margin-bottom:22px;}
+    .resena-card{background:#0d1f3c;border:1.5px solid #1e3560;border-radius:8px;padding:22px 20px;}
+    .resena-stars{color:#f59e0b;font-size:1rem;margin-bottom:10px;}
+    .resena-text{color:#90d4f7;font-size:0.9rem;line-height:1.7;margin-bottom:14px;font-style:italic;}
+    .resena-author{color:#b8e4ff;font-family:'Abril Fatface',Georgia,serif;font-size:0.95rem;}
+    .resena-date{color:#1e3560;font-size:0.72rem;}
+    .faq-item{border:1.5px solid #1e3560;border-radius:6px;overflow:hidden;margin-bottom:12px;}
+    .faq-q{padding:16px 20px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:#080f1f;transition:background 0.2s;}
+    .faq-q:hover{background:#0d1a30;}
+    .faq-q.open{background:#0d1f3c;}
+    .faq-q span{color:#b8e4ff;font-size:0.95rem;font-weight:600;}
+    .faq-icon{color:#5bb8f5;font-size:1.4rem;transition:transform 0.2s;line-height:1;}
+    .faq-a{padding:14px 20px 18px;background:#0a1628;border-top:1px solid #1e3560;display:none;}
+    .faq-a.open{display:block;}
+    .faq-a p{color:#90d4f7;font-size:0.9rem;line-height:1.75;}
+    .gallery{columns:3 190px;gap:11px;}
+    .gallery img{width:100%;display:block;margin-bottom:11px;border-radius:4px;cursor:pointer;transition:opacity 0.2s,transform 0.2s;break-inside:avoid;}
+    .gallery img:hover{opacity:0.82;transform:scale(1.02);}
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,0.93);z-index:999;display:none;align-items:center;justify-content:center;}
+    .lightbox.open{display:flex;}
+    .lightbox img{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:4px;}
+    .lb-prev,.lb-close,.lb-next{position:absolute;background:rgba(0,0,0,0.55);color:#fff;border:none;width:38px;height:38px;border-radius:50%;font-size:1.3rem;cursor:pointer;}
+    .lb-prev{left:20px;top:50%;transform:translateY(-50%);}
+    .lb-next{right:20px;top:50%;transform:translateY(-50%);}
+    .lb-close{top:20px;right:20px;background:#2196d3;}
+    .wa-float{position:fixed;bottom:24px;right:24px;z-index:200;text-decoration:none;}
+    .wa-bubble{width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,0.5);cursor:pointer;transition:transform 0.2s;}
+    .wa-bubble:hover{transform:scale(1.12);}
+    .wa-label{position:absolute;right:68px;top:50%;transform:translateY(-50%);background:#25D366;color:#fff;padding:6px 12px;border-radius:20px;font-size:0.78rem;white-space:nowrap;box-shadow:0 2px 10px rgba(0,0,0,0.2);}
+    .page{display:none;}
+    .page.active{display:block;}
+    .paypal-btn{width:100%;background:#FFC439;color:#003087;border:none;padding:14px;border-radius:4px;font-size:1rem;font-weight:bold;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;font-family:'Lora',Georgia,serif;transition:opacity 0.2s;text-decoration:none;}
+    .paypal-btn:hover{opacity:0.88;}
+    footer{background:#050e1e;padding:28px 20px;text-align:center;border-top:1px solid #162040;}
+    .hidden{display:none!important;}
+    .success-box{background:#0d1f3c;border:1.5px solid #1e4080;border-radius:6px;padding:20px;margin-bottom:30px;text-align:left;}
+  </style>
+</head>
+<body>
+<nav>
+  <div class="logo" onclick="showPage('inicio')">
+    <span style="font-size:1.4rem">🌴</span>
+    <div>
+      <div class="logo-title">Villas Paraíso</div>
+      <div class="logo-sub">Fantino · Sánchez Ramírez</div>
+    </div>
+  </div>
+  <div class="nav-links">
+    <span class="nav-link active" onclick="showPage('inicio')" id="nav-inicio">Inicio</span>
+    <span class="nav-link" onclick="showPage('disponibilidad')" id="nav-disponibilidad">Disponibilidad</span>
+    <span class="nav-link" onclick="showPage('galeria')" id="nav-galeria">Galería</span>
+    <span class="nav-link" onclick="showPage('reservar')" id="nav-reservar">Reservar</span>
+  </div>
+</nav>
+<a class="wa-float" href="https://wa.me/18093970376?text=%C2%A1Hola!%20Me%20interesa%20reservar%20en%20Villas%20Para%C3%ADso%20%F0%9F%8C%B4" target="_blank">
+  <div class="wa-bubble">
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="white">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.154 1.523 5.922L.072 23.928l6.188-1.423A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.001-1.366l-.36-.214-3.716.854.87-3.619-.235-.372A9.818 9.818 0 112 12c0-5.411 4.407-9.818 9.818-9.818 5.412 0 9.818 4.407 9.818 9.818 0 5.412-4.406 9.818-9.818 9.818z"/>
+    </svg>
+  </div>
+  <div class="wa-label">¡Reserva ya!</div>
+</a>
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightbox()">×</button>
+  <button class="lb-prev" onclick="lbPrev(event)">‹</button>
+  <img id="lb-img" src="" alt="Villa"/>
+  <button class="lb-next" onclick="lbNext(event)">›</button>
+</div>
+<div class="page active" id="page-inicio">
+  <div class="hero">
+    <img src="https://res.cloudinary.com/dz9oxckem/image/upload/v1779016903/WhatsApp_Image_2026-05-17_at_07.15.12_3_wmudai.jpg" alt="Piscina Villas Paraíso" id="hero-img"/>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="tag" style="margin-bottom:22px">Fantino, Sánchez Ramírez · R.D.</div>
+      <h1>Villas Paraíso</h1>
+      <p>Tu espacio ideal para compartir, relajarte y crear momentos inolvidables. Hasta 20 personas.</p>
+      <div class="hero-btns">
+        <button class="btn-blue" onclick="showPage('reservar')">Reservar ahora</button>
+        <button class="btn-outline" onclick="showPage('disponibilidad')">Ver disponibilidad</button>
+      </div>
+    </div>
+  </div>
+  <section style="background:#081224;">
+    <div class="container">
+      <div class="section-header">
+        <div class="tag" style="margin-bottom:18px">Nuestros paquetes</div>
+        <h2>Elige tu experiencia</h2>
+        <p style="color:#40a8e0;margin-top:8px">Capacidad para hasta <strong style="color:#5bb8f5">20 personas</strong></p>
+      </div>
+      <div class="grid-2">
+        <div class="pkg-card">
+          <div style="font-size:2.4rem;margin-bottom:12px">☀️</div>
+          <h3>Pasadía</h3>
+          <div style="color:#1870a8;font-size:0.8rem;margin-bottom:14px">9:00 AM – 6:00 PM</div>
+          <div class="pkg-price">RD$8,000</div>
+          <p>Disfruta la villa de día con acceso completo a todas las instalaciones.</p>
+          <ul><li>Piscina adultos y niños</li><li>Área BBQ</li><li>Áreas verdes</li><li>Estacionamiento</li><li>Planta eléctrica</li></ul>
+          <button class="btn-blue" style="margin-top:26px;width:100%" onclick="selectPkg('pasadia');showPage('reservar')">Reservar Pasadía</button>
+        </div>
+        <div class="pkg-card">
+          <div style="font-size:2.4rem;margin-bottom:12px">🌙</div>
+          <h3>Amanecida</h3>
+          <div style="color:#1870a8;font-size:0.8rem;margin-bottom:14px">6:00 PM – 6:00 AM</div>
+          <div class="pkg-price">RD$10,000</div>
+          <p>Vive la experiencia completa de noche con todos los servicios disponibles.</p>
+          <ul><li>Piscina con luces LED</li><li>Área BBQ</li><li>Terraza</li><li>Ambiente nocturno</li><li>Planta eléctrica</li></ul>
+          <button class="btn-blue" style="margin-top:26px;width:100%" onclick="selectPkg('amanecida');showPage('reservar')">Reservar Amanecida</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <div class="tag" style="margin-bottom:14px">Lo que incluye</div>
+        <h2>Todo para tu comodidad</h2>
+      </div>
+      <div class="grid-4">
+        <div class="amenidad"><span>🏊</span><span>Piscina adultos</span></div>
+        <div class="amenidad"><span>👶</span><span>Piscina niños</span></div>
+        <div class="amenidad"><span>🔥</span><span>Área BBQ</span></div>
+        <div class="amenidad"><span>🌿</span><span>Jardines privados</span></div>
+        <div class="amenidad"><span>⚡</span><span>Planta eléctrica</span></div>
+        <div class="amenidad"><span>🏡</span><span>Ambiente privado</span></div>
+        <div class="amenidad"><span>🌴</span><span>Palmar tropical</span></div>
+        <div class="amenidad"><span>🪵</span><span>Terraza de madera</span></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:#060d1c;border-top:1px solid #131f3e;">
+    <div style="max-width:960px;margin:0 auto;">
+      <div class="section-header">
+        <div class="tag" style="margin-bottom:14px">Lo que dicen nuestros clientes</div>
+        <h2>Reseñas</h2>
+        <div style="color:#5bb8f5;font-size:1.1rem;margin-top:6px">⭐⭐⭐⭐⭐ <span style="font-size:0.9rem;color:#40a8e0">(20+ reseñas)</span></div>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
+        <div class="resena-card"><div class="resena-stars">⭐⭐⭐⭐⭐</div><p class="resena-text">"Increíble lugar, la piscina es hermosa y el ambiente muy privado. ¡Volvemos pronto!"</p><div style="display:flex;justify-content:space-between"><span class="resena-author">María G.</span><span class="resena-date">Abril 2025</span></div></div>
+        <div class="resena-card"><div class="resena-stars">⭐⭐⭐⭐⭐</div><p class="resena-text">"Celebramos el cumpleaños de mi esposa aquí y fue perfecto. Todo limpio y muy bien cuidado."</p><div style="display:flex;justify-content:space-between"><span class="resena-author">Carlos R.</span><span class="resena-date">Marzo 2025</span></div></div>
+        <div class="resena-card"><div class="resena-stars">⭐⭐⭐⭐⭐</div><p class="resena-text">"La mejor pasadía que hemos tenido. La piscina de noche con las luces es espectacular."</p><div style="display:flex;justify-content:space-between"><span class="resena-author">Paola M.</span><span class="resena-date">Febrero 2025</span></div></div>
+        <div class="resena-card"><div class="resena-stars">⭐⭐⭐⭐⭐</div><p class="resena-text">"Excelente lugar para compartir en familia. Los jardines son preciosos y el área BBQ top."</p><div style="display:flex;justify-content:space-between"><span class="resena-author">José A.</span><span class="resena-date">Enero 2025</span></div></div>
+      </div>
+    </div>
+  </section>
+  <section style="background:#080f1f;border-top:1px solid #131f3e;">
+    <div style="max-width:760px;margin:0 auto;">
+      <div class="section-header">
+        <div class="tag" style="margin-bottom:14px">Preguntas frecuentes</div>
+        <h2>¿Tienes dudas?</h2>
+      </div>
+      <div id="faq-list"></div>
+      <div style="text-align:center;margin-top:40px">
+        <p style="color:#40a8e0;margin-bottom:16px">¿Tienes otra pregunta? Escríbenos</p>
+        <a class="btn-wa" href="https://wa.me/18093970376" target="_blank">📲 Preguntar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+  <section style="background:#071020;border-top:1px solid #162848;text-align:center;">
+    <h3 class="D" style="color:#5bb8f5;font-size:1.7rem;margin-bottom:10px">¿Tienes alguna pregunta?</h3>
+    <p style="color:#40a8e0;margin-bottom:24px">Escríbenos directamente por WhatsApp</p>
+    <a class="btn-wa" href="https://wa.me/18093970376" target="_blank" style="margin:0 auto">📲 Chatear por WhatsApp</a>
+    <div style="margin-top:18px;color:#1060a0;font-size:0.82rem">📍 Fantino, Sánchez Ramírez &nbsp;·&nbsp; 📧 orratc1@hotmail.com</div>
+  </section>
+</div>
+<div class="page" id="page-disponibilidad">
+  <div style="max-width:740px;margin:0 auto;padding:52px 20px;">
+    <div class="section-header">
+      <div class="tag" style="margin-bottom:14px">Calendario</div>
+      <h2>Disponibilidad</h2>
+      <p style="color:#40a8e0;font-size:0.92rem;margin-top:8px">Los días disponibles están resaltados. Toca uno para seleccionarlo.</p>
+    </div>
+    <div id="cal-disp"></div>
+    <div style="margin-top:22px;text-align:center">
+      <p style="color:#2088c0;font-size:0.85rem;margin-bottom:14px">Selecciona un día disponible y luego haz tu reserva</p>
+      <button class="btn-blue" onclick="showPage('reservar')">Ir a reservar →</button>
+    </div>
+    <div style="margin-top:32px;text-align:center">
+      <button onclick="document.getElementById('admin-login').classList.toggle('hidden')" style="background:none;border:none;color:#162848;font-size:0.7rem;cursor:pointer;letter-spacing:0.1em">Acceso propietario</button>
+      <div id="admin-login" class="hidden" style="margin-top:14px;display:inline-flex;flex-direction:column;align-items:center;gap:10px;background:#071020;border:1px solid #1e3560;padding:18px 22px;border-radius:6px;">
+        <div style="color:#40a8e0;font-size:0.76rem">Contraseña de administrador</div>
+        <input type="password" id="admin-pass" class="inp" placeholder="••••••••" style="width:210px;text-align:center" onkeydown="if(event.key==='Enter')loginAdmin()"/>
+        <div id="admin-error" class="hidden" style="color:#ef4444;font-size:0.76rem">Contraseña incorrecta</div>
+        <div style="display:flex;gap:8px">
+          <button class="btn-blue" onclick="loginAdmin()" style="padding:9px 18px;font-size:0.83rem">Entrar</button>
+          <button onclick="document.getElementById('admin-login').classList.add('hidden')" style="background:none;border:1px solid #1e3560;color:#40a8e0;padding:9px 14px;border-radius:2px;cursor:pointer;font-size:0.83rem">Cancelar</button>
+        </div>
+      </div>
+      <div id="admin-panel" class="hidden" style="margin-top:14px;background:#0d1f3a;border:1.5px solid #f59e0b;border-radius:8px;padding:18px 22px;">
+        <div style="color:#f59e0b;font-family:'Abril Fatface',serif;font-size:0.95rem;margin-bottom:4px">🔑 Modo Administrador activo</div>
+        <div style="color:#9a7a2a;font-size:0.8rem;margin-bottom:14px">Toca cualquier día para marcarlo ocupado (rojo) o libre.</div>
+        <div style="display:flex;gap:8px;justify-content:center">
+          <button class="btn-blue" onclick="saveAdmin()" style="padding:9px 18px;font-size:0.82rem" id="save-btn">Guardar cambios</button>
+          <button onclick="logoutAdmin()" style="background:transparent;border:1px solid #5a4a1a;color:#9a7a2a;padding:9px 14px;border-radius:2px;cursor:pointer;font-size:0.82rem">Salir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="page" id="page-galeria">
+  <div style="max-width:1050px;margin:0 auto;padding:52px 18px;">
+    <div class="section-header">
+      <div class="tag" style="margin-bottom:14px">Galería de fotos</div>
+      <h2>Conoce la villa</h2>
+      <p style="color:#40a8e0;font-style:italic;margin-top:8px">Toca cualquier foto para ampliarla</p>
+    </div>
+    <div class="gallery" id="gallery"></div>
+    <div style="text-align:center;margin-top:44px">
+      <button class="btn-blue" onclick="showPage('reservar')">Reservar ahora</button>
+    </div>
+  </div>
+</div>
+<div class="page" id="page-reservar">
+  <div class="form-section" id="form-view">
+    <div class="section-header">
+      <div class="tag" style="margin-bottom:14px">Reservaciones</div>
+      <h2>Haz tu reserva</h2>
+      <p style="color:#40a8e0;font-size:0.9rem;margin-top:8px">Al confirmar, se abrirá WhatsApp con tu solicitud lista para enviar.</p>
+    </div>
+    <div class="form-group">
+      <label>Selecciona tu paquete</label>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="pkg-select selected" id="pkg-pasadia" onclick="selectPkg('pasadia')">
+          <div style="font-size:1.8rem;margin-bottom:8px">☀️</div>
+          <div class="D" style="color:#b8e4ff;font-size:1.1rem;margin-bottom:3px">Pasadía</div>
+          <div style="color:#40a8e0;font-size:0.75rem;margin-bottom:8px">9:00 AM – 6:00 PM</div>
+          <div style="color:#5bb8f5;font-size:1.35rem;font-family:'Abril Fatface',serif">RD$8,000</div>
+        </div>
+        <div class="pkg-select" id="pkg-amanecida" onclick="selectPkg('amanecida')">
+          <div style="font-size:1.8rem;margin-bottom:8px">🌙</div>
+          <div class="D" style="color:#b8e4ff;font-size:1.1rem;margin-bottom:3px">Amanecida</div>
+          <div style="color:#40a8e0;font-size:0.75rem;margin-bottom:8px">6:00 PM – 6:00 AM</div>
+          <div style="color:#5bb8f5;font-size:1.35rem;font-family:'Abril Fatface',serif">RD$10,000</div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Selecciona tu fecha</label>
+      <div id="cal-reservar"></div>
+      <div id="fecha-msg" style="color:#2088c0;font-size:0.8rem;margin-top:8px">👆 Toca un día disponible para seleccionar la fecha</div>
+    </div>
+    <div class="form-group">
+      <label>Cantidad de personas</label>
+      <input type="number" class="inp" id="f-personas" value="5" min="1" max="20"/>
+    </div>
+    <div class="form-group">
+      <label>Tu nombre completo *</label>
+      <input type="text" class="inp" id="f-nombre" placeholder="Ej: María González"/>
+    </div>
+    <div class="grid-2-form" style="margin-bottom:16px">
+      <div><label>WhatsApp *</label><input type="tel" class="inp" id="f-telefono" placeholder="809-XXX-XXXX"/></div>
+      <div><label>Correo (opcional)</label><input type="email" class="inp" id="f-correo" placeholder="tu@correo.com"/></div>
+    </div>
+    <div class="form-group">
+      <label>Mensaje adicional</label>
+      <textarea class="inp" id="f-mensaje" rows="3" placeholder="Algún requerimiento especial..." style="resize:vertical"></textarea>
+    </div>
+    <div class="resumen hidden" id="resumen">
+      <div class="D" style="color:#5bb8f5;font-size:1rem;margin-bottom:12px">Resumen de reserva</div>
+      <div id="resumen-content" style="color:#90d4f7;font-size:0.9rem;line-height:2"></div>
+    </div>
+    <button class="btn-wa" style="width:100%;justify-content:center;font-size:1rem;padding:15px" onclick="confirmarReserva()">📲 Confirmar reserva por WhatsApp</button>
+    <div id="form-error" style="color:#1060a0;font-size:0.78rem;text-align:center;margin-top:8px">Selecciona fecha disponible y completa los campos obligatorios (*)</div>
+    <div id="paypal-section" class="hidden" style="margin-top:14px;background:#0a1628;border:1.5px solid #162848;border-radius:6px;padding:18px 20px;">
+      <div style="color:#40a8e0;font-size:0.76rem;margin-bottom:12px;text-align:center">— O paga directamente con tarjeta / PayPal —</div>
+      <a id="paypal-link" href="#" target="_blank" class="paypal-btn">🅿️ <span id="paypal-text">Pagar con PayPal</span><span id="paypal-usd" style="font-size:0.74rem;opacity:0.65"></span></a>
+      <p style="color:#1060a0;font-size:0.72rem;text-align:center;margin-top:10px;line-height:1.6">Acepta Visa, Mastercard y PayPal · Pago 100% seguro<br/>Después de pagar, envíanos el comprobante por WhatsApp.</p>
+    </div>
+  </div>
+  <div class="form-section hidden" id="confirm-view" style="text-align:center">
+    <div style="font-size:3.5rem;margin-bottom:20px">🌴</div>
+    <div class="tag" style="margin-bottom:18px">¡Solicitud enviada!</div>
+    <h2 class="D" style="font-size:2rem;color:#b8e4ff;margin-bottom:14px">¡Nos vemos pronto!</h2>
+    <p style="color:#60c0f0;font-size:1rem;line-height:1.8;margin-bottom:36px">Tu solicitud fue enviada a Villas Paraíso por WhatsApp. El equipo te confirmará disponibilidad y detalles de pago en breve. 📲</p>
+    <div class="success-box" id="confirm-detail"></div>
+    <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn-wa" href="https://wa.me/18093970376" target="_blank">📲 Seguir en WhatsApp</a>
+      <button class="btn-outline" onclick="resetForm()">Volver al inicio</button>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="D" style="color:#5bb8f5;font-size:1rem;margin-bottom:5px">Villas Paraíso 🌴</div>
+  <div style="color:#0a5090;font-size:0.72rem;letter-spacing:0.14em">📍 Fantino, Sánchez Ramírez · 📲 809-397-0376 · 📧 orratc1@hotmail.com</div>
+  <div style="color:#162848;font-size:0.68rem;margin-top:10px">© 2026 Villas Paraíso. Todos los derechos reservados.</div>
+</footer>
+<script>
+const FOTOS_GALERIA=["https://res.cloudinary.com/dz9oxckem/image/upload/v1779016903/WhatsApp_Image_2026-05-17_at_07.15.12_3_wmudai.jpg","https://res.cloudinary.com/dz9oxckem/image/upload/v1779016914/WhatsApp_Image_2026-05-17_at_07.15.14_swbgxt.jpg","https://res.cloudinary.com/dz9oxckem/image/upload/v1779016914/WhatsApp_Image_2026-05-17_at_07.15.14_8_wddapu.jpg","https://res.cloudinary.com/dz9oxckem/image/upload/v1779016903/WhatsApp_Image_2026-05-17_at_07.15.12_2_g7djk4.jpg","https://res.cloudinary.com/dz9oxckem/image/upload/v1779016902/WhatsApp_Image_2026-05-17_at_07.15.12_1_hrin12.jpg","https://res.cloudinary.com/dz9oxckem/image/upload/v1779016909/WhatsApp_Image_2026-05-17_at_07.15.13_9_tffvch.jpg","https://res.cloudinary.com/dz9oxckem/image/upload/v1779016912/WhatsApp_Image_2026-05-17_at_07.15.14_4_oq4pr9.jpg","https://res.cloudinary.com/dz9oxckem/image/upload/v1779016912/WhatsApp_Image_2026-05-17_at_07.15.14_5_sdtfj0.jpg","https://res.cloudinary.com/dz9oxckem/image/upload/v1779016903/WhatsApp_Image_2026-05-17_at_07.15.12_4_qwpykq.jpg"];
+const FAQS_DATA=[{q:"¿Se puede llevar música y alcohol?",a:"Sí, puedes traer tu música y bebidas. Contamos con área de bar y espacio para disfrutar."},{q:"¿Hay estacionamiento?",a:"Sí, contamos con amplio estacionamiento privado dentro de la villa."},{q:"¿Cuántas personas entran máximo?",a:"La villa tiene capacidad para hasta 20 personas cómodamente."},{q:"¿Cómo confirmo mi reserva?",a:"Una vez enviada tu solicitud por WhatsApp, te confirmamos disponibilidad y coordinas el pago."},{q:"¿Se puede hacer fiestas o eventos?",a:"¡Claro! Somos perfectos para cumpleaños, reuniones familiares y celebraciones privadas."},{q:"¿La piscina tiene luces de noche?",a:"Sí, la piscina tiene iluminación LED azul para las amanecidas, creando un ambiente espectacular."}];
+const MESES=["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const DIAS=["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+const WHATSAPP="18093970376";
+const ADMIN_PASS="paraiso2026";
+let ocupados=new Set(),isAdmin=false,selectedPkg="pasadia",selectedFecha="",lbIdx=0;
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.querySelectorAll('.nav-link').forEach(n=>n.classList.remove('active'));document.getElementById('page-'+id).classList.add('active');document.getElementById('nav-'+id).classList.add('active');window.scrollTo(0,0);}
+function buildGallery(){const g=document.getElementById('gallery');FOTOS_GALERIA.forEach((src,i)=>{const img=document.createElement('img');img.src=src;img.alt='Villa '+(i+1);img.onclick=()=>openLightbox(i);g.appendChild(img);});}
+function openLightbox(i){lbIdx=i;document.getElementById('lb-img').src=FOTOS_GALERIA[i];document.getElementById('lightbox').classList.add('open');}
+function closeLightbox(e){if(!e||e.target===document.getElementById('lightbox')||e.currentTarget.classList.contains('lb-close'))document.getElementById('lightbox').classList.remove('open');}
+function lbPrev(e){e.stopPropagation();lbIdx=(lbIdx-1+FOTOS_GALERIA.length)%FOTOS_GALERIA.length;document.getElementById('lb-img').src=FOTOS_GALERIA[lbIdx];}
+function lbNext(e){e.stopPropagation();lbIdx=(lbIdx+1)%FOTOS_GALERIA.length;document.getElementById('lb-img').src=FOTOS_GALERIA[lbIdx];}
+function buildFAQ(){const list=document.getElementById('faq-list');FAQS_DATA.forEach(({q,a})=>{const item=document.createElement('div');item.className='faq-item';item.innerHTML=`<div class="faq-q" onclick="toggleFaq(this)"><span>${q}</span><span class="faq-icon">+</span></div><div class="faq-a"><p>${a}</p></div>`;list.appendChild(item);});}
+function toggleFaq(el){const icon=el.querySelector('.faq-icon');const ans=el.nextElementSibling;const isOpen=ans.classList.contains('open');document.querySelectorAll('.faq-a.open').forEach(a=>{a.classList.remove('open');a.previousElementSibling.classList.remove('open');a.previousElementSibling.querySelector('.faq-icon').style.transform='rotate(0deg)';});if(!isOpen){ans.classList.add('open');el.classList.add('open');icon.style.transform='rotate(45deg)';}}
+function buildCalendar(containerId,onSelect){const now=new Date();let mes=now.getMonth(),anio=now.getFullYear();function render(){const cont=document.getElementById(containerId);const primerDia=new Date(anio,mes,1).getDay();const diasMes=new Date(anio,mes+1,0).getDate();const hoy=new Date();hoy.setHours(0,0,0,0);let html=`<div class="cal"><div class="cal-header"><button class="cal-nav" onclick="calPrev_${containerId}()">‹</button><h3>${MESES[mes]} ${anio}</h3><button class="cal-nav" onclick="calNext_${containerId}()">›</button></div><div class="cal-days-header">${DIAS.map(d=>`<div class="cal-day-name">${d}</div>`).join('')}</div><div class="cal-days">`;for(let i=0;i<primerDia;i++)html+='<div></div>';for(let d=1;d<=diasMes;d++){const key=`${anio}-${String(mes+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;const fecha=new Date(anio,mes,d);fecha.setHours(0,0,0,0);const past=fecha<hoy;const ocup=ocupados.has(key);const sel=selectedFecha===key;let cls='cal-day';if(past)cls+=' past';else if(ocup)cls+=' occupied'+(isAdmin?' admin':'');else if(sel)cls+=' selected';else cls+=' available';const click=past?'':`onclick="calClick_${containerId}('${key}')"`;html+=`<div class="${cls}" ${click}>${d}</div>`;}html+=`</div><div class="cal-legend"><div class="legend-item"><div class="legend-dot" style="background:#132440;border:1px solid #1060a0"></div>Disponible</div><div class="legend-item"><div class="legend-dot" style="background:#2a0a0a"></div>Ocupado</div><div class="legend-item"><div class="legend-dot" style="background:#2196d3"></div>Seleccionado</div>${isAdmin?'<div style="font-size:0.7rem;color:#f59e0b;margin-left:auto">🔑 Toca para marcar/desmarcar</div>':''}</div></div>`;cont.innerHTML=html;}
+window[`calPrev_${containerId}`]=()=>{if(mes===0){mes=11;anio--;}else mes--;render();};
+window[`calNext_${containerId}`]=()=>{if(mes===11){mes=0;anio++;}else mes++;render();};
+window[`calClick_${containerId}`]=(key)=>{if(isAdmin){ocupados.has(key)?ocupados.delete(key):ocupados.add(key);}else{if(ocupados.has(key))return;selectedFecha=key;if(onSelect)onSelect(key);}render();renderCalDisp();};
+render();return render;}
+let renderCalDisp,renderCalReservar;
+function loginAdmin(){if(document.getElementById('admin-pass').value===ADMIN_PASS){isAdmin=true;document.getElementById('admin-login').classList.add('hidden');document.getElementById('admin-panel').classList.remove('hidden');renderCalDisp();}else{document.getElementById('admin-error').classList.remove('hidden');}}
+function logoutAdmin(){isAdmin=false;document.getElementById('admin-panel').classList.add('hidden');document.getElementById('admin-login').classList.add('hidden');renderCalDisp();}
+function saveAdmin(){const btn=document.getElementById('save-btn');btn.textContent='✓ Guardado';setTimeout(()=>btn.textContent='Guardar cambios',2500);}
+function selectPkg(id){selectedPkg=id;document.getElementById('pkg-pasadia').classList.toggle('selected',id==='pasadia');document.getElementById('pkg-amanecida').classList.toggle('selected',id==='amanecida');updateResumen();}
+function updateResumen(){const precio=selectedPkg==='pasadia'?8000:10000;const icono=selectedPkg==='pasadia'?'☀️':'🌙';const nombre=selectedPkg==='pasadia'?'Pasadía':'Amanecida';const horario=selectedPkg==='pasadia'?'9:00 AM – 6:00 PM':'6:00 PM – 6:00 AM';const fecha=selectedFecha;const personas=document.getElementById('f-personas')?.value||5;if(fecha&&!ocupados.has(fecha)){const fmtFecha=new Date(fecha+'T12:00:00').toLocaleDateString('es-DO',{weekday:'long',year:'numeric',month:'long',day:'numeric'});document.getElementById('resumen').classList.remove('hidden');document.getElementById('resumen-content').innerHTML=`<div>${icono} <strong>${nombre}</strong> — ${horario}</div><div>📅 ${fmtFecha}</div><div>👥 ${personas} persona${personas!=1?'s':''}</div><div style="margin-top:8px;border-top:1px solid #1e3560;padding-top:8px;color:#5bb8f5;font-size:1.1rem;font-family:'Abril Fatface',serif">Total: RD$${precio.toLocaleString('es-DO')}</div>`;const usd=(precio/60).toFixed(2);document.getElementById('paypal-section').classList.remove('hidden');document.getElementById('paypal-link').href=`https://www.paypal.com/paypalme/osvaldo1988rosario/${usd}`;document.getElementById('paypal-text').textContent=`Pagar RD$${precio.toLocaleString('es-DO')} con PayPal`;document.getElementById('paypal-usd').textContent=`≈ $${usd} USD`;document.getElementById('form-error').classList.add('hidden');}else{document.getElementById('resumen').classList.add('hidden');document.getElementById('paypal-section').classList.add('hidden');}}
+function confirmarReserva(){const nombre=document.getElementById('f-nombre').value.trim();const telefono=document.getElementById('f-telefono').value.trim();const personas=document.getElementById('f-personas').value;const mensaje=document.getElementById('f-mensaje').value.trim();if(!selectedFecha||ocupados.has(selectedFecha)||!nombre||!telefono){document.getElementById('form-error').classList.remove('hidden');return;}const precio=selectedPkg==='pasadia'?8000:10000;const pkgNombre=selectedPkg==='pasadia'?'Pasadía':'Amanecida';const fmtFecha=new Date(selectedFecha+'T12:00:00').toLocaleDateString('es-DO',{weekday:'long',year:'numeric',month:'long',day:'numeric'});const msg=encodeURIComponent(`¡Hola! Quiero reservar en *Villas Paraíso* 🌴\n\n*Paquete:* ${pkgNombre} (RD$${precio.toLocaleString('es-DO')})\n*Fecha:* ${fmtFecha}\n*Personas:* ${personas}\n*Nombre:* ${nombre}\n*Teléfono:* ${telefono}\n${mensaje?`*Mensaje:* ${mensaje}\n`:''}\nEspero su confirmación. ¡Gracias!`);window.open(`https://wa.me/${WHATSAPP}?text=${msg}`,'_blank');document.getElementById('form-view').classList.add('hidden');document.getElementById('confirm-view').classList.remove('hidden');document.getElementById('confirm-detail').innerHTML=`<div style="color:#90d4f7;line-height:2.1;font-size:0.95rem"><div>${selectedPkg==='pasadia'?'☀️':'🌙'} ${pkgNombre}</div><div>📅 ${fmtFecha}</div><div>👥 ${personas} persona${personas!=1?'s':''}</div><div style="color:#5bb8f5;font-size:1.05rem;font-family:'Abril Fatface',serif;margin-top:6px">RD$${precio.toLocaleString('es-DO')}</div></div>`;}
+function resetForm(){selectedFecha='';document.getElementById('f-nombre').value='';document.getElementById('f-telefono').value='';document.getElementById('f-correo').value='';document.getElementById('f-mensaje').value='';document.getElementById('f-personas').value=5;document.getElementById('form-view').classList.remove('hidden');document.getElementById('confirm-view').classList.add('hidden');document.getElementById('fecha-msg').textContent='👆 Toca un día disponible para seleccionar la fecha';document.getElementById('fecha-msg').style.color='#2088c0';renderCalReservar();showPage('inicio');}
+function onFechaSelected(key){selectedFecha=key;const fmtFecha=new Date(key+'T12:00:00').toLocaleDateString('es-DO',{weekday:'long',year:'numeric',month:'long',day:'numeric'});const msg=document.getElementById('fecha-msg');msg.textContent='✓ '+fmtFecha;msg.style.color='#5bb8f5';updateResumen();renderCalReservar();}
+window.onload=()=>{buildGallery();buildFAQ();renderCalDisp=buildCalendar('cal-disp',(key)=>{selectedFecha=key;showPage('reservar');onFechaSelected(key);});renderCalReservar=buildCalendar('cal-reservar',onFechaSelected);document.getElementById('f-personas').addEventListener('change',updateResumen);};
+</script>
+</body>
+</html>
